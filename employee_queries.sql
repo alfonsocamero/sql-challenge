@@ -36,3 +36,15 @@ USING (dept_no)
 LEFT JOIN employees 
 USING (emp_no)
 ORDER BY emp_no
+
+--4. List the department of each employee with the following information: employee number, last name, first name, and department name.
+
+SELECT
+	employees.emp_no,
+	employees.last_name,
+	employees.first_name,
+	departments.dept_name
+FROM employees 
+INNER JOIN dept_emp USING (emp_no)
+INNER JOIN departments USING (dept_no)
+order by emp_no;
